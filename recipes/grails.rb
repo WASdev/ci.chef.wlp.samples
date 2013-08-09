@@ -15,11 +15,11 @@ end
 # update host & port information
 ruby_block "update_server_xml" do
   block do
-    config = Liberty::Configuration.load("#{node['wlp']['base_dir']}/wlp/usr", serverName)
-    config.httpEndpoint.host = "*"
-    config.httpEndpoint.httpPort = "8080"
+    config = LibertySamples::Configuration.load(node, serverName)
+    config.httpEndpoint.host = node["wlp-samples"]["grails"]["host"] || node["wlp-samples"]["host"]
+    config.httpEndpoint.httpPort = node["wlp-samples"]["grails"]["httpPort"]
     if config.modified
-      config.save(node['wlp']['user'], node['wlp']['group'])
+      config.save()
       notifies_delayed(:restart, resources(:service => "wlp-#{serverName}"))
     end
   end
