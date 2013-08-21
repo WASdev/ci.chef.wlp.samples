@@ -1,0 +1,9 @@
+<server description="Wicket Sample App configuration">
+
+    <application id="PhoneBookByWicket" location="WicketApp.war" name="PhoneBookByWicket" type="war">
+        <classloader commonLibraryRef="WicketSampleLibs" />
+    </application>
+	
+    <include location="${shared.config.dir}/WicketSampleLibs.xml"/>
+
+</server>
