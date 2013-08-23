@@ -26,8 +26,7 @@ default[:wlp][:servers][:WicketSample] = {
     {
       "id" => "defaultHttpEndpoint",
       "host" => "*",
-      "httpport" => "9080",
-      "httpsport" => "9443"
+      "httpport" => "9080"
     }
   ],
   "includes" => [ "${shared.config.dir}/WicketSampleApp.xml" ]
