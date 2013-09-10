@@ -18,7 +18,7 @@ default["wlp-samples"]["host"] = "*"
 default["wlp-samples"]["grails"]["httpPort"] = 9102
 
 default[:wlp][:servers][:WicketSample] = {
-  "enabled" => true,
+  "enabled" => false,
   "servername" => "WicketSample",
   "description" => "Wicket Sample Server",
   "features" => [ "servlet-3.0", "jsp-2.2" ],
@@ -30,5 +30,19 @@ default[:wlp][:servers][:WicketSample] = {
     }
   ],
   "includes" => [ "${shared.config.dir}/WicketSampleApp.xml" ]
+}
+
+default[:wlp][:servers][:Test1] = {
+  "enabled" => true,
+  "servername" => "Test1",
+  "description" => "Test Server 1",
+  "httpendpoints" => [
+    {
+      "id" => "defaultHttpEndpoint",
+      "host" => "*",
+      "httpport" => "9080"
+    }
+  ],
+  "applicationsxml" => "applications.xml"
 }
 
