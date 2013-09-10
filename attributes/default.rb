@@ -22,11 +22,11 @@ default[:wlp][:servers][:WicketSample] = {
   "servername" => "WicketSample",
   "description" => "Wicket Sample Server",
   "features" => [ "servlet-3.0", "jsp-2.2" ],
-  "httpendpoints" => [
+  "httpEndpoints" => [
     {
       "id" => "defaultHttpEndpoint",
       "host" => "*",
-      "httpport" => "9080"
+      "httpPort" => "9080"
     }
   ],
   "includes" => [ "${shared.config.dir}/WicketSampleApp.xml" ]
@@ -36,11 +36,11 @@ default[:wlp][:servers][:Test1] = {
   "enabled" => true,
   "servername" => "Test1",
   "description" => "Test Server 1",
-  "httpendpoints" => [
+  "httpEndpoints" => [
     {
       "id" => "defaultHttpEndpoint",
       "host" => "*",
-      "httpport" => "9080"
+      "httpPort" => "9080"
     }
   ],
   "applicationsxml" => "applications.xml"
