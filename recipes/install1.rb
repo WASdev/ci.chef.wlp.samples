@@ -1,9 +1,9 @@
 # Install the helloworld application
 # TODO: use app from wasdev
 
-application "HelloworldApp" do
+serverName = "Test1"
 
- serverName = "Test1"
+application "HelloworldApp" do
 
   path "/usr/local/helloworldApp"
   repository "http://central.maven.org/maven2/org/apache/tuscany/sca/samples/helloworld-webapp/2.0/helloworld-webapp-2.0.war"
@@ -13,7 +13,6 @@ application "HelloworldApp" do
 
   wlp_webapp do
 
-    description "Helloworld App"
     features [ "jsp-2.2", "servlet-3.0" ]
 
     # TODO: derive app_location automatically
@@ -29,7 +28,9 @@ application "HelloworldApp" do
 
   end
 
-  wlp
+  wlp do
+    server_name serverName
+  end
 
 end
 
