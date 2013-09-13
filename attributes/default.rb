@@ -32,17 +32,3 @@ default[:wlp][:servers][:WicketSample] = {
   "includes" => [ "${shared.config.dir}/WicketSampleApp.xml" ]
 }
 
-default[:wlp][:servers][:Test1] = {
-  "enabled" => true,
-  "servername" => "Test1",
-  "description" => "Test Server 1",
-  "httpEndpoints" => [
-    {
-      "id" => "defaultHttpEndpoint",
-      "host" => "*",
-      "httpPort" => "9080"
-    }
-  ],
-  "applicationsxml" => "applications.xml"
-}
-
