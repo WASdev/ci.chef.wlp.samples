@@ -11,7 +11,7 @@ application "HelloworldApp2" do
   owner "wlp"
   group "wlp-admin"
 
-  wlp_webapp do
+  wlp_application do
 
     features [ "jsp-2.2", "servlet-3.0" ]
 
