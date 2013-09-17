@@ -13,6 +13,8 @@ application "HelloworldApp2" do
 
   wlp_application do
 
+    server_name serverName
+
     features [ "jsp-2.2", "servlet-3.0" ]
 
 #   application name and location default to above "HelloworldApp" and path
