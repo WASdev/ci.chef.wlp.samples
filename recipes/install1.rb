@@ -33,8 +33,3 @@ application "HelloworldApp2" do
   end
 
 end
-
-# TODO: where should this start go?
-wlp_server serverName do
-  action :start
-end
