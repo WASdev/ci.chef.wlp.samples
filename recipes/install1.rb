@@ -28,8 +28,4 @@ application "HelloworldApp2" do
 
   end
 
-  wlp do
-    server_name serverName
-  end
-
 end
