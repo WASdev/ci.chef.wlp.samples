@@ -13,3 +13,9 @@ application "JSPExamples" do
 
 end
 
+# start server if it is not running already
+wlp_server server_name do
+  action :start
+end
+
+
