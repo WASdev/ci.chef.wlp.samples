@@ -12,7 +12,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 
-
 default["wlp-samples"]["host"] = "*"
 
 default["wlp-samples"]["grails"]["httpPort"] = 9102
@@ -31,4 +30,6 @@ default[:wlp][:servers][:WicketSample] = {
   ],
   "includes" => [ "${shared.config.dir}/WicketSampleApp.xml" ]
 }
+
+default["wlp-samples"]["clusterName"] = "MYCLUSTER1"
 
