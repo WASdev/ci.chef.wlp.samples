@@ -8,4 +8,5 @@ version          '0.1.0'
 
 depends "wlp"
 depends "mongodb"
+depends "apache2"
 depends "application_wlp"
