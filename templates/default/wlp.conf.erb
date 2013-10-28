@@ -6,11 +6,6 @@
 
         <Proxy balancer://mycluster>
 
-                # WebHead1
-                #BalancerMember http://192.168.33.10:9080
-                # WebHead2
-                #BalancerMember http://192.168.1.64:9080
-
                 <% @ipaddresses.each do |ip| -%>
                 BalancerMember http://<%= ip %>:9080
                 <% end -%>
