@@ -7,6 +7,7 @@
   include_recipe "apache2::mod_proxy"
   include_recipe "apache2::mod_proxy_http"
   include_recipe "apache2::mod_proxy_balancer"
+  include_recipe "apache2::mod_rewrite"
 
   #ipaddresses = [ "192.168.33.10", "192.168.1.64", "192.168.1.65"]
   ipaddresses = []
