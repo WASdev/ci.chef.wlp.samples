@@ -45,6 +45,10 @@
         # or everything in the site.
         ProxyPass /balancer-manager !
         ProxyPass / balancer://mycluster/
+        ProxyPassReverse / balancer://mycluster/
+        RewriteEngine On
+        RewriteRule /(.*) balancer://mycluster/$1 [P]
+
 
 </VirtualHost>
 
