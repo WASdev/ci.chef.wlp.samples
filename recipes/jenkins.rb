@@ -32,20 +32,19 @@ wlp_server server_name do
                     "name" => "jenkins-admin"
                   },
                   "group" => {
-                    "name" => "jenkins-admin"
+                    "name" => "jenkins-admins"
                   }
                 }
               }
             },
             "basicRegistry" => {
-              "id" => "basic",
               "realm" => "jenkins",
               "user" => {
                 "name" => "jenkins-admin",
                 "password" => lambda { Liberty::SecurityHelper.new(node).encode("secret") }
               },
               "group" => {
-                "name" => "jenkins-admin",
+                "name" => "jenkins-admins",
                 "member" => {
                   "name" => "jenkins-admin"
                 }
