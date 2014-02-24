@@ -31,5 +31,6 @@ default[:wlp][:servers][:WicketSample] = {
   "includes" => [ "${shared.config.dir}/WicketSampleApp.xml" ]
 }
 
-default["wlp-samples"]["clusterName"] = "MYCLUSTER1"
+default["wlp-samples"]["proxy"]["clusterName"] = "MYCLUSTER1"
+default["wlp-samples"]["proxy"]["clusterNetworkInterface"] = "eth0"
 

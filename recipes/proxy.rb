@@ -12,13 +12,14 @@
   #ipaddresses = [ "192.168.33.10", "192.168.1.64", "192.168.1.65"]
   ipaddresses = []
 
-  cluster_name = node["wlp-samples"]["clusterName"]
+  cluster_name = node["wlp-samples"]["proxy"]["clusterName"]
+  cluster_interface = node["wlp-samples"]["proxy"]["clusterNetworkInterface"]
   cluster_nodes = search(:node, "roles:#{cluster_name}")
   cluster_nodes.each do |cluster_node|
-     ipaddresses << cluster_node[:ipaddress]
+     ipaddresses <<  cluster_node["network"]["interfaces"][cluster_interface]["addresses"].select{|address, data| data["family"] == "inet"}.keys[0]
   end
 
-  template "/etc/apache2/conf.d/wlp" do
+  template "/etc/apache2/conf.d/wlp.conf" do
     source "wlp.conf.erb"
     mode   "0775"
     variables ({
