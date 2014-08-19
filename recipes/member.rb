@@ -41,13 +41,14 @@ end
 
 # join the server to the collective
 wlp_collective "#{serverName}" do
+   action :join
+   server_name serverName
+   # the following are the details of the collective controller 
    host "localhost"
    port "9443"
    user "admin"
    password "adminpwd"
    keystorePassword "Liberty"
-   server_name serverName
-   action :join
 end
 
 # start service
