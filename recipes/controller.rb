@@ -1,6 +1,6 @@
 # Recipe that demonstrates how to create a Liberty collective controller
 
-serverName = "controllerA"
+serverName = "#{node['wlp']['collectiveServerName']}"
 
 # define service beforehand - otherwise notifications from ruby_block won't work
 service "wlp-#{serverName}" do
