@@ -1,6 +1,6 @@
 # Recipe that demonstrates how to join a server to a Liberty collective
 
-serverName = "memberD"
+serverName = "#{node['wlp']['collectiveServerName']}"
 
 # define service beforehand - otherwise notifications from ruby_block won't work
 service "wlp-#{serverName}" do
@@ -16,7 +16,7 @@ wlp_server serverName do
 
             # this overrides the defaultCluster name 
             "clusterMember" => {
-              "name" => [ "myTestCluster" ]
+              "name" => [ "#{node['wlp']['clusterName']}" ]
             },
 
             # this enables application and packages deploys from the collective 
